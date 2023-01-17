@@ -1,0 +1,31 @@
+App\Entity\Account:
+  account_n_{1..5}:
+    email: <email()>
+    creationDate: '<dateTimeBetween("-60 days", "-10days")>'
+    expiryDate: '<dateTimeBetween("30 days", "90 days")>'
+  account_test_target:
+    id: 'TSTTAR'
+    email: 'test_target@local.dev'
+  account_fresh:
+    id: 'AFRESH'
+    email: 'fresh@local.dev'
+  account_expired:
+    id: 'EXPIRE'
+    email: 'expired@local.dev'
+    creationDate: '<(new DateTime("-360 days"))>'
+    expiryDate: '<(new DateTime("-95 days"))>'
+  account_expiring:
+    id: 'EXPIRG'
+    email: 'expiring@local.dev'
+    creationDate: '<(new DateTime("-70 days"))>'
+    expiryDate: '<(new DateTime("5 days"))>'
+  account_no_campaigns:
+    id: 'NOCAMP'
+    email: 'no_campaigns@local.dev'
+    creationDate: '<dateTimeBetween("-60 days", "-10days")>'
+    expiryDate: '<dateTimeBetween("30 days", "90 days")>'
+  account_has_campaigns:
+    id: 'HASCAM'
+    email: 'has_campaigns@local.dev'
+    creationDate: '<dateTimeBetween("-60 days", "-10days")>'
+    expiryDate: '<dateTimeBetween("30 days", "90 days")>'

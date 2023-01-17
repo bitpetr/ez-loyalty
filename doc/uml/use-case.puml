@@ -1,0 +1,29 @@
+@startuml
+skinparam actorStyle awesome
+
+'(Use the application) as (Use)
+'
+'User -> (Start)
+'User --> (Use)
+'
+'Admin ---> (Use)
+'
+'note right of Admin : This is an example.
+'
+'note "This note is connected\nto several objects." as N2
+'(Start) .. N2
+'N2 .. (Use)
+
+(Loyalty service) as (Loyalty)
+note left of Loyalty: Stores client loyalty info
+Client --> (Store 1)
+Client --> (Store 2)
+Client --> (Store 3)
+note right of Client: Makes purchases in your stores
+
+(Store 1) --> (Loyalty)
+(Store 2) ---> (Loyalty)
+(Store 3) ---> (Loyalty)
+note bottom of (Store 3): Interacts with the loyalty service
+
+@enduml

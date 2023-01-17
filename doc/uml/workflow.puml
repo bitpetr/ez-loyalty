@@ -1,0 +1,41 @@
+@startuml
+
+start
+if (Have a loyalty account code?) then (yes)
+  :GET /api/accounts/$CODE;
+else (no)
+ if (Have an email?) then (yes)
+  :GET /api/accounts?email=$EMAIL;
+ else (no)
+  stop
+ endif
+endif
+if (Account found?) then (no)
+ :on purchase: POST /api/accounts;
+else (yes)
+ if (Has coins?) then (yes)
+  :Suggest discount;
+ endif
+endif
+:Start purchase;
+if (Coins used?) then (yes)
+ :POST /api/account_transactions
+            {operation: freeze};
+ :Store the ID;
+endif
+if (Purchase successful?) then (yes)
+ :POST /api/account_transactions
+            {operation: award};
+ if (Coins used?) then (yes)
+  :PATCH /api/account_transactions/$STORED_ID
+                {operation: deduct};
+ endif
+else (no)
+ if (Coins used?) then (yes)
+   :PATCH /api/account_transactions/$STORED_ID
+                 {operation: release};
+ endif
+endif
+stop
+
+@enduml

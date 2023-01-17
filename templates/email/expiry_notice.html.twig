@@ -1,0 +1,15 @@
+<h4>Hello {{ account.email }},</h4>
+
+<p>
+    Your loyalty account with code <strong>{{ account.id }}</strong> will expire <strong>{{ account.expiryDate|date }}</strong> and will be deleted due to inactivity.
+</p>
+<p>
+    You can use your bonus loyalty code from your previous purchases to buy services and products from all of our sites with big discount.
+    Make a purchase on one of our websites using loyalty code <strong>{{ account.id }}</strong>.
+</p>
+<p>
+    Current amount of stored bonus on account: <strong>{{ account.coins }}</strong>
+</p>
+<p>
+    If you have any questions or concerns, contact us - we're available 24/7 for you :)
+</p>

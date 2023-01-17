@@ -1,0 +1,4 @@
+cayetanosoriano_hashids:
+  salt: "B8GCTllUyMxu" #optional
+  min_hash_length: 6 #optional
+  alphabet: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'

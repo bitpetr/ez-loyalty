@@ -1,0 +1,5 @@
+security:
+  firewalls:
+    dev:
+      pattern: ^/
+      security: false
