@@ -1,0 +1,41 @@
+App\Entity\Campaign:
+  campaign_00:
+    id: 'TEST00'
+    name: 'No restrictions'
+    rewardPercent: '25'
+    singleUse: false
+    onlyNew: false
+  campaign_01:
+    id: 'TEST01'
+    name: 'Only new'
+    rewardPercent: '25'
+    singleUse: false
+    onlyNew: true
+  campaign_10:
+    id: 'TEST10'
+    name: 'Single use'
+    rewardPercent: '25'
+    singleUse: true
+    onlyNew: false
+  campaign_11:
+    id: 'TEST11'
+    name: 'Single use and only new'
+    rewardPercent: '25'
+    singleUse: true
+    onlyNew: true
+  campaign_not_started:
+    id: 'NOTSTARTED'
+    name: 'Campaign not yet started'
+    validSince: '<(new DateTime("10 days"))>'
+    validUntil: '<(new DateTime("30 days"))>'
+    rewardPercent: '25'
+    singleUse: false
+    onlyNew: false
+  campaign_finished:
+    id: 'FINISHED'
+    name: 'Campaign that have already finished'
+    validSince: '<(new DateTime("-30 days"))>'
+    validUntil: '<(new DateTime("-10 days"))>'
+    rewardPercent: 25
+    singleUse: false
+    onlyNew: false

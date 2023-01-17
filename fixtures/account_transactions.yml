@@ -1,0 +1,77 @@
+App\Entity\AccountTransaction:
+  transaction_award_n_{1..50}:
+    account: '@account_n_*'
+    operation: 'award'
+    time: '<dateTimeBetween("-10 days", "-5 days")>'
+    coinsAmount: <numberBetween(1,100)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+  transaction_award_expiring_{1..10}:
+    account: '@account_expiring'
+    operation: 'award'
+    time: '<dateTimeBetween("-20 days", "-15 days")>'
+    coinsAmount: <numberBetween(1,100)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+  transaction_deduct_n_{1..10}:
+    account: '@account_n_*'
+    operation: 'deduct'
+    time: '<dateTimeBetween("-5 days", "now")>'
+    coinsAmount: <numberBetween(1,55)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+  transaction_camp_1:
+    account: '@account_has_campaigns'
+    operation: 'award'
+    time: '<dateTimeBetween("-5 days", "now")>'
+    coinsAmount: <numberBetween(1,55)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+    campaign: '@campaign_11'
+  transaction_camp_2:
+    account: '@account_has_campaigns'
+    operation: 'award'
+    time: '<dateTimeBetween("-5 days", "now")>'
+    coinsAmount: <numberBetween(1,55)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+    campaign: '@campaign_10'
+  transaction_camp_3:
+    account: '@account_has_campaigns'
+    operation: 'award'
+    time: '<dateTimeBetween("-5 days", "now")>'
+    coinsAmount: <numberBetween(1,55)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+    campaign: '@campaign_01'
+  transaction_camp_4:
+    account: '@account_has_campaigns'
+    operation: 'award'
+    time: '<dateTimeBetween("-5 days", "now")>'
+    coinsAmount: <numberBetween(1,55)>
+    moneyAmount: '@self->coinsAmount'
+    currency: '50%? USD: EUR'
+    source: '@api_client_*'
+    campaign: '@campaign_00'
+  transaction_test_target_award:
+    account: '@account_test_target'
+    operation: 'award'
+    coinsAmount: 11
+    moneyAmount: 11
+    currency: 'USD'
+    source: '@api_client_*'
+    campaign: '@campaign_00'
+  transaction_old_frozen:
+    account: '@account_n*'
+    operation: 'freeze'
+    time: '<dateTimeBetween("-2 days", "-1 day")>'
+    coinsAmount: 1
+    moneyAmount: 1
+    currency: 'USD'
+    source: '@api_client_*'

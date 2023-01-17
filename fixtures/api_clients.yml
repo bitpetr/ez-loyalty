@@ -1,0 +1,5 @@
+App\Entity\ApiClient:
+  api_client_1:
+    name: 'local.dev'
+    token: 'gek7g84GbEy08wnfbTz3FwOCpJUreiPX'
+    allowedIpAdresses: ['172.0.0.0']

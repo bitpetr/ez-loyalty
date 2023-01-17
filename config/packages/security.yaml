@@ -1,0 +1,51 @@
+security:
+    password_hashers:
+        App\Entity\Admin:
+            algorithm: auto
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_admin_provider:
+            entity:
+                class: App\Entity\Admin
+                property: username
+        api_client_provider:
+            entity:
+                class: App\Entity\ApiClient
+                property: token
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api:
+            pattern: ^/api
+            provider: api_client_provider
+            custom_authenticator: App\Security\ApiTokenAuthenticator
+            context: app_context
+            entry_point: security.authenticator.form_login.main
+        main:
+            pattern: ^/
+            entry_point: form_login
+            form_login: ~
+            lazy: true
+            provider: app_admin_provider
+            custom_authenticator: App\Security\AppAuthenticator
+            context: app_context
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/api, roles: [ROLE_API_CLIENT, ROLE_ADMIN] }
+         - { path: ^/profile, roles: ROLE_USER }

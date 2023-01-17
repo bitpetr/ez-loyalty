@@ -1,0 +1,8 @@
+parameters:
+  hash: "$2y$13$MWtD7zyrt6ZW1SeeUiyYB.Rb3wSPcRyXkRVebQn8hKX8DofIo.e1C"
+App\Entity\Admin:
+  admin:
+    username: 'admin'
+    plainPassword: 'loyalty'
+    password: <{hash}>
+    roles: '[ROLE_ADMIN]'
