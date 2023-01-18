@@ -2,6 +2,7 @@
 
 ## Intro
 A simple standalone e-commerce customer loyalty service built with PHP (Api Platform 2.7 + Symfony 5.4 + EasyAdmin).
+
 ![use case](/doc/img/use-case.png)
 
 **Features**:
