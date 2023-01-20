@@ -36,7 +36,7 @@ You could also want to replace some of the few templates located in the `templat
 
 Build an image:
 
-`docker build -f Dockerfile-demo -t loyalty-demo .`
+`docker build -f Dockerfile -t loyalty-demo .`
 
 Run a container:
 
