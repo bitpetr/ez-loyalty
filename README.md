@@ -13,8 +13,8 @@ A simple standalone e-commerce customer loyalty service built with PHP (Api Plat
 - secure REST API with docs and playground
 - admin dashboard
 
-[![GitHub Actions](https://github.com/bitpetr/ez-loyalty/actions/workflows/symfony-test.yml/badge.svg)](https://github.com/bitpetr/ez-loyalty/actions?query=workflow%3Asymfony-test)
-[![GitHub Actions](https://github.com/bitpetr/ez-loyalty/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/bitpetr/ez-loyalty/actions?query=workflow%3Adocker-publish)
+[![GitHub Actions](https://github.com/bitpetr/ez-loyalty/actions/workflows/symfony-test.yml/badge.svg)](https://github.com/bitpetr/ez-loyalty/actions/workflows/symfony-test.yml)
+[![GitHub Actions](https://github.com/bitpetr/ez-loyalty/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/bitpetr/ez-loyalty/actions/workflows/docker-publish.yml)
 
 ## Requirements
 Either PHP8.1 or Docker.
